@@ -8,9 +8,14 @@ import (
 )
 
 type Config struct {
-	Username  string
-	Oauth     string
-	BotUserId string
+	Username   string
+	Oauth      string
+	BotUserId  string
+	PsqlHost   string
+	PsqlPort   string
+	PsqlUser   string
+	PsqlPass   string
+	PsqlDbName string
 }
 
 func LoadConfig() *Config {
