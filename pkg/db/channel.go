@@ -1,6 +1,8 @@
 package db
 
-import "database/sql"
+import (
+	"database/sql"
+)
 
 type Channel struct {
 	Id      int64
@@ -20,3 +22,15 @@ func Open(driverName, dataSource string) (*DB, error) {
 
 	return &DB{db}, nil
 }
+
+func (db *DB) Close() error {
+	return db.db.Close()
+}
+
+// func (db *DB) Seed() error {
+// 	data := Channel{
+// 		Id:      31437432,
+// 		Name:    "nouryxd",
+// 		Connect: true,
+// 	}
+// }
